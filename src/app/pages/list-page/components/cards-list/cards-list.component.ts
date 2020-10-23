@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { combineLatest } from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { combineLatest, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { PeopleService } from 'src/app/core/people/people.service';
 import { Person } from '../../../../shared/models/person.interface';
 import { getScore } from '../../../../shared/utils/get-person-score';
@@ -11,16 +12,25 @@ import { ListFilterService } from '../../services/list.service';
   styleUrls: ['./cards-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CardsListComponent {
+export class CardsListComponent implements OnDestroy, OnInit{
   highScorePeople: Person[] = [];
   mediumScorePeople: Person[] = [];
   lowScorePeople: Person[] = [];
   
   private minScore: number = Infinity;
   private maxScore: number = -Infinity;
+  private onDestroy$ = new Subject<void>();
 
-  constructor(private listFilterService: ListFilterService, private peopleService: PeopleService) {
+  
+  constructor(private listFilterService: ListFilterService, private peopleService: PeopleService) {}
+
+  ngOnInit(): void {
     this.subscribeToPeople();
+  }
+  
+  ngOnDestroy(): void {
+    this.onDestroy$.next();
+    this.onDestroy$.complete();
   }
 
   // [TO-DO]: refactor to move code into services and get rid of code duplications
@@ -28,7 +38,9 @@ export class CardsListComponent {
     combineLatest([
       this.peopleService.getAll(), 
       this.listFilterService.nameFilter
-    ]).subscribe(([people, nameFilter]) => {
+    ])
+    .pipe(takeUntil(this.onDestroy$))
+    .subscribe(([people, nameFilter]) => {
       this.setScores(people);
       this.setPeopleGroups(people.filter(person => !nameFilter || person.firstName.toLowerCase().includes(nameFilter.toLowerCase())))
     });

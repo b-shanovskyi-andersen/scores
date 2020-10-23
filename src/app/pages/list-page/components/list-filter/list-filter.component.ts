@@ -9,9 +9,9 @@ import { ListFilterService } from '../../services/list.service';
 export class ListFilterComponent {
   filter = '';
 
-  constructor(private ListFilterService: ListFilterService) {}
+  constructor(private listFilterService: ListFilterService) {}
 
-  filterList() {
-    this.ListFilterService.setNameFilter(this.filter);
+  filterList():void {
+    this.listFilterService.setNameFilter(this.filter);
   }
 }
