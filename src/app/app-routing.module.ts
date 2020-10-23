@@ -8,11 +8,12 @@ const LIST_PATH = 'list';
 const routes: Routes = [
   { 
     path: LIST_PATH, 
-    component: ListPageComponent,
+    loadChildren: () => import('./pages/list-page/list-page.module').then(m => m.ListPageModule),
     pathMatch: 'full'
   },
   { 
     path: `${LIST_PATH}/:id`, 
+    loadChildren: () => import('./pages/person-details-page/person-details.module').then(m => m.PersonDetailsModule),
     component: PersonDetailsPageComponent},
   {
     path: '',
