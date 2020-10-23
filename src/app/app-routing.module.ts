@@ -5,7 +5,6 @@ import { ListPageComponent } from './list-page/list-page.component';
 import { PersonDetailsPageComponent } from './person-details-page/person-details-page.component';
 
 const LIST_PATH = 'list';
-const PERSON_DETAILS_PATH = '';
 
 const routes: Routes = [
   { 
@@ -25,6 +24,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
-  exports: [RouterModule]
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
