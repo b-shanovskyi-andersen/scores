@@ -8,4 +8,4 @@ import { PersonDetailsPageComponent } from './components/person-details-page/per
     CommonModule
   ]
 })
-export class PersonDetailsModuleModule { }
+export class PersonDetailsModule { }

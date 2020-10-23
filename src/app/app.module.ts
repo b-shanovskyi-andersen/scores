@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { CoreModule } from './core/core.module';
 import { ListPageModule } from './pages/list-page/list-page.module';
-import { PersonDetailsModuleModule } from './pages/person-details-page/person-details-module.module';
+import { PersonDetailsModule } from './pages/person-details-page/person-details.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { PersonDetailsModuleModule } from './pages/person-details-page/person-de
     BrowserAnimationsModule,
     MatButtonModule,
     ListPageModule,
-    PersonDetailsModuleModule
+    PersonDetailsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
