@@ -8,6 +8,8 @@ import { PersonEditorComponent } from './person-editor/person-editor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardsListComponent } from './cards-list/cards-list.component';
+import { PersonCardComponent } from './person-card/person-card.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,14 +17,16 @@ import { CardsListComponent } from './cards-list/cards-list.component';
     ListPageComponent,
     PersonDetailsPageComponent,
     PersonEditorComponent,
-    CardsListComponent
+    CardsListComponent,
+    PersonCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

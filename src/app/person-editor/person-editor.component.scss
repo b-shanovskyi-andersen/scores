@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  $gap: 15px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 15px;
+
+  .form__field-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    &:first-child {
+      margin-right: $gap;
+    }
+  }
+
+  .form__field {
+    width: 200px;
+    flex-grow: 1;
+    
+    &:first-child {
+      margin-right: $gap;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    display: block;
+
+    .form__field-group:first-child {
+      margin-bottom: $gap;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .form__field-group {
+      flex-direction: column;
+
+      .form__field {
+        width: 100%;
+        
+        &:first-child {
+          margin-bottom: $gap;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../variables/colors";
+
+input {
+  background: #FFFFFF;
+  border: 1px solid $grey;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 19px;
+}

@@ -1,0 +1,20 @@
+<ng-template [ngIf]="person">
+  <div class="close" (click)="handleCloseClick()">X</div>
+  
+  <div class="avatar" [style.background-image]="'url(' + person.photo + ')'">
+  </div>
+  
+  <div class="info-wrapper">
+    <p class="name"> {{ fullName }} </p>
+  
+    <p class="score">
+      <span class="score__title"> Score </span>
+      <span class="score__value"> {{ score }} </span>
+    </p>
+
+    <button class="open" (click)="handleOpenClick()"> Open </button>
+  </div>
+  
+</ng-template>  
+
+

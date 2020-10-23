@@ -1,0 +1,33 @@
+@import "../variables/colors";
+
+button {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: $white;
+  height: 34px;
+  min-width: 114px;
+
+  &.button--primary {
+    border-color: $primary;
+    color: $primary;
+
+    &.flat {
+      background-color: $primary;
+    }
+  }
+
+  &.button--secondary {
+    border-color: $secondary;
+    color: $secondary;
+
+    &.flat {
+      background-color: $secondary;
+    }
+  }
+
+  &.flat {
+    color: $white
+  }
+}
+
