@@ -10,18 +10,21 @@ import { Person } from '../models/person.interface';
 export class ListPageComponent implements OnInit {
   personList: Person[] = [
     {
+      id: 0,
       firstName: 'Ivan',
       lastName: 'Invanov',
       income: 2000,
       photo: 'https://placekitten.com/200/300'
     },
     {
+      id: 1,
       firstName: 'Roman',
       lastName: 'Romanov',
       income: 3333,
       photo: 'https://placekitten.com/200/400'
     },
     {
+      id: 2,
       firstName: 'Ivan',
       lastName: 'Invanov',
       income: 10500,
