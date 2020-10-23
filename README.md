@@ -1,3 +1,14 @@
+# Results
+
+What was done:
+- lazy loading of bothe views;
+- general layout for adding and editing person (but without actual implementaion);
+- showing the list of persons;
+- placing cards in a proper columns based on the person's score;
+- filtering visible cards by first name;
+- navigating to the details view;
+- getting person information on the detials view by id (but showing it just as json object, without the proper layout);
+
 # Scores
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
