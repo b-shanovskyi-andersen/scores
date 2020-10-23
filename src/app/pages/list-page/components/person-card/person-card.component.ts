@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Person } from '../models/person.interface';
-import { getScore } from '../utils/get-person-score';
+import { Person } from '../../../../shared/models/person.interface';
+import { getScore } from '../../../../shared/utils/get-person-score';
 
 @Component({
   selector: 'app-person-card',

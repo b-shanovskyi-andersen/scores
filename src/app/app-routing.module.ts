@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ListPageComponent } from './list-page/list-page.component';
-import { PersonDetailsPageComponent } from './person-details-page/person-details-page.component';
+import { ListPageComponent } from './pages/list-page/components/list-page/list-page.component';
+import { PersonDetailsPageComponent } from './pages/person-details-page/components/person-details-page/person-details-page.component';
 
 const LIST_PATH = 'list';
 

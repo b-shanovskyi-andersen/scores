@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Person } from '../models/person.interface';
+import { Person } from '../../../../shared/models/person.interface';
 
 @Component({
   selector: 'app-person-editor',
