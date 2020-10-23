@@ -6,6 +6,7 @@ import { Person } from '../../../../shared/models/person.interface';
 import { getScore } from '../../../../shared/utils/get-person-score';
 import { ListFilterService } from '../../services/list.service';
 
+
 @Component({
   selector: 'app-cards-list',
   templateUrl: './cards-list.component.html',
@@ -13,12 +14,9 @@ import { ListFilterService } from '../../services/list.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardsListComponent implements OnDestroy, OnInit{
-  highScorePeople: Person[] = [];
-  mediumScorePeople: Person[] = [];
-  lowScorePeople: Person[] = [];
-  
   private minScore: number = Infinity;
   private maxScore: number = -Infinity;
+  private filteredPeople: { person: Person, column: number }[] = []
   private onDestroy$ = new Subject<void>();
 
   
@@ -46,6 +44,12 @@ export class CardsListComponent implements OnDestroy, OnInit{
     });
   }
 
+  getPeopleByColumn(columnNumber: number): Person[] {
+    return this.filteredPeople
+      .filter(person => person.column === columnNumber)
+      .map(person => person.person)
+  }
+
   private getPersonColumn(person: Person): number {
     const range = this.maxScore - this.minScore;
     const score = getScore(person) - this.minScore;
@@ -68,25 +72,9 @@ export class CardsListComponent implements OnDestroy, OnInit{
   }
   
   private setPeopleGroups(people: Person[]): void {
-    this.highScorePeople = [];
-    this.mediumScorePeople = [];
-    this.lowScorePeople = [];
-
-    people.forEach(person => {
-      switch(this.getPersonColumn(person)) {
-        case 1: {
-          this.lowScorePeople.push(person)
-          break;
-        }
-        case 2: {
-          this.mediumScorePeople.push(person)
-          break;
-        }
-        case 3: {
-          this.highScorePeople.push(person)
-          break;
-        }
-      }
-    })
+    this.filteredPeople = people.map(person => ({
+      person,
+      column: this.getPersonColumn(person)
+    }));
   }
 }

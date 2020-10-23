@@ -4,14 +4,14 @@
 <!-- TO-DO: use template instad of duplciating html -->
 <div class="columns-wrapper">
   <div class="column">
-    <app-person-card class="card" *ngFor="let person of highScorePeople" [person]="person"></app-person-card>
+    <app-person-card class="card" *ngFor="let person of getPeopleByColumn(1)" [person]="person"></app-person-card>
   </div>
   
   <div class="column">
-    <app-person-card class="card" *ngFor="let person of mediumScorePeople" [person]="person"></app-person-card>
+    <app-person-card class="card" *ngFor="let person of getPeopleByColumn(2)" [person]="person"></app-person-card>
   </div>
   
   <div class="column">
-    <app-person-card class="card" *ngFor="let person of lowScorePeople" [person]="person"></app-person-card>
+    <app-person-card class="card" *ngFor="let person of getPeopleByColumn(3)" [person]="person"></app-person-card>
   </div>
 </div>
