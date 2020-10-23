@@ -5,16 +5,21 @@ import { ListPageComponent } from './components/list-page/list-page.component';
 import { PersonCardComponent } from './components/person-card/person-card.component';
 import { PersonEditorComponent } from './components/person-editor/person-editor.component';
 import { ListPageRoutingModule } from './list-page-routing.module';
+import { ListFilterComponent } from './components/list-filter/list-filter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ListPageComponent,
     PersonEditorComponent,
     CardsListComponent,
-    PersonCardComponent
+    PersonCardComponent,
+    ListFilterComponent
   ],
   imports: [
     CommonModule,
+    FormsModule, 
+    ReactiveFormsModule,
     ListPageRoutingModule
   ]
 })

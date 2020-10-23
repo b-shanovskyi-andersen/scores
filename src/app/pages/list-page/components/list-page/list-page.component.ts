@@ -7,6 +7,4 @@ import { PeopleService } from 'src/app/core/people/people.service';
   styleUrls: ['./list-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListPageComponent {
-  constructor(public peopleService: PeopleService) { }
-}
+export class ListPageComponent {}

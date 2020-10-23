@@ -1,18 +1,24 @@
 $gap: 15px;
 
 :host {
+  display: block;
+  padding: 0 15px 15px;
+}
+
+.columns-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1110px;
   margin: auto;
-  padding: 0 15px 15px;
+  
 }
 
 .column {
   padding-top: $gap;
   margin-right: $gap;
   flex-grow: 1;
+  flex-basis: 100px;
   
   &:last-child {
     margin-right: 0;

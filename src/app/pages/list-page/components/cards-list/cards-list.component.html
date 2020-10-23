@@ -1,10 +1,11 @@
+<app-list-filter></app-list-filter>
+
 <!-- TO-DO: add placeholder for no items in the list -->
-<ng-template [ngIf]="personList">
-  <!-- TO-DO: use filterer items for each column -->
+<div class="columns-wrapper">
   <div class="column">
     <app-person-card class="card" *ngFor="let person of highScorePeople" [person]="person"></app-person-card>
   </div>
-
+  
   <div class="column">
     <app-person-card class="card" *ngFor="let person of mediumScorePeople" [person]="person"></app-person-card>
   </div>
@@ -12,4 +13,4 @@
   <div class="column">
     <app-person-card class="card" *ngFor="let person of lowScorePeople" [person]="person"></app-person-card>
   </div>
-</ng-template>
+</div>
