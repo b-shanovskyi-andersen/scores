@@ -19,7 +19,7 @@ export const mockPeople: Person[] =  [
     id: 2,
     firstName: 'Ivan',
     lastName: 'Invanov',
-    income: 10500,
+    income: 5500,
     photo: 'https://placekitten.com/700/900'
   },
   {
