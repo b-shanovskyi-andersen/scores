@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Person } from 'src/app/shared/models/person.interface';
 import { mockPeople } from './poeple.mock';
 
@@ -13,5 +14,9 @@ export class PeopleService {
 
   getAll(): Observable<Person[]> {
     return this.people$.asObservable();
+  }
+
+  getById(id: number): Observable<Person> {
+    return this.people$.asObservable().pipe(map(people => people.find(person => person.id === id)));
   }
 }
